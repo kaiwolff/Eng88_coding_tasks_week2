@@ -62,3 +62,16 @@ def input_int_range(min_val, max_val): #makes sure that the input is an integer 
         else:
             print(f"Input must be between {min_val} and {max_val}. Please try again")
             continue
+def input_yes_no():
+    #will return true, false, or exit, depending on the user choice. Continually prompts user until acceptable option reached
+    while True:
+        var = input("Please input 'y' or 'n' to signify yes or no. Type 'exit to exit: ")
+        if "exit" in var.lower():
+            return "exit"
+        elif var.lower() == "y":
+            return True
+        elif var.lower() == "n":
+            return False
+        else:
+            print("Input not recognised")
+            continue

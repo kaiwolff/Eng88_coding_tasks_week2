@@ -4,7 +4,7 @@
 # example - num_float = 23.66 - round it to 24, num_float = 23.50 - round it to lower end
 
 import math
-from reusables import input_float
+from input_control import input_float
 
 num_float = input_float()
 

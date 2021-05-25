@@ -17,7 +17,7 @@ I then called the function input_float, which takes a user input that can be a f
 
 ```python
 import math
-from reusables import input_float
+from input_control import input_float
 
 num_float = input_float()
 
