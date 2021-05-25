@@ -31,15 +31,28 @@ class OrderHelper:
                 print("You are currently ordering nothing. Type 'add' to add items, or 'exit' to exit: ")
             else:
                 print("Here is your current order:")
-                for item in order:
+                for item in self.order_contents:
                     print(item)
                 next_step = input("Type 'add' to add an item, or 'remove' to remove an item. To place your order, type 'done', or 'exit' to quit the order process: ")
 
                 #Have now taken input. Next is to take appropriate action with list.
                 #if done, set order_active to False and print out order.
+                if next_step == "done":
+                    print("\nThank you for your order. Here is a summary:")
+                    for item in self.order_contents:
+                        print(item)
+                    self.order_active = False
                 #if add, run add_item
+                elif next_step == "add":
+                    print("add selected")
+                    self.add_item()
                 #if remove, run remove_item
                 #if exit, empty list and quit order process
+                if next_step == "exit":
+                    clear(order)
+                    print("order cancelled")
+                    self.order_active = Fal
+
 
 
 
@@ -53,4 +66,4 @@ menu = {
 }
 
 my_order = OrderHelper()
-my_order.add_item()
+my_order.take_order()
