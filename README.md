@@ -19,10 +19,27 @@ I then called the function input_float, which takes a user input that can be a f
 import math
 from reusables import input_float
 
-num1num_float = input_float()
+num_float = input_float()
 
 
 ```
+input_float prompts a user for an input, and ensures it is suitable as a float. It will return either the phrase "exit" if the user types this as part of their response, or the desired float:
+
+```
+def input_float(): #makes sure that the input is a float
+    #Will either return the input as a float or the phrase "exit"
+    while True:
+        var = input(f"Please enter a float. Type 'exit' to exit: ")
+        if "exit" in var.lower():
+            return "exit"
+        else:
+            try:
+                return float(var)
+            except:
+                print("input not recognised")
+                continue
+   ```
+
 
 Other than that, I simply subtracted the rounded down number from the float that was input. This leaves a float between 0 and 1, and determining whether this is greater than 0.5 or not lets me determine whether to round up or down.
 
