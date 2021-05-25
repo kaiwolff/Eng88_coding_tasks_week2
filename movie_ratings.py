@@ -10,8 +10,9 @@ class Rating_Explainer:
         }
 
     def explain_rating(self):
+        #added option to return "exit" in case this method/object was to be used in a separate while loop
         while True:
-            rating = input(f"which rating are interested in? Options are {self.avail_ratings.keys()}. Type 'exit' to exit: ")
+            rating = input(f"Which rating are interested in? Options are {self.avail_ratings.keys()}. Type 'exit' to exit: ")
             #check for exit
             if "exit" in rating.lower():
                 return "exit"
@@ -20,7 +21,6 @@ class Rating_Explainer:
             else:
                 print("Input not recognised, please try again.")
                 continue
-
 
 
 explainer = Rating_Explainer()
