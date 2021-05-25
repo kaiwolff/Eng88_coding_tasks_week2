@@ -6,11 +6,15 @@
 import math
 from reusables import input_float
 
-num1num_float = input_float()
+num_float = input_float()
+
+if "exit" in num_float:
+    exit
 
 #subtracting the rounded down number leaves only the decimal part.
 # then applying control flow. Could also have been solved by using int(num_float), which works quite similarly to math.floor.
-if num_float - math.floor(num_float) > 0.50:
-    print(math.ceil(num_float))
 else:
-    print(math.floor(num_float))
+    if num_float - math.floor(num_float) > 0.50:
+        print(math.ceil(num_float))
+    else:
+        print(math.floor(num_float))
