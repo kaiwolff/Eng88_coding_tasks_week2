@@ -13,11 +13,15 @@ class OrderHelper:
     def add_item(self):
         #add an item to the order, after showing the menu
         print("Here's what's on the menu")
+        self.show_menu()
 
-        show_menu()
+        item = input("Please type which item you would like to add to your order. Type 'nothing' to add nothing: ")
+        if item in menu.values():
+            self.order_contents.append(item)
+            print(f"{item} added to order.")
 
-
-
+        else:
+            return
 
 
     def take_order(self):
@@ -49,4 +53,4 @@ menu = {
 }
 
 my_order = OrderHelper()
-my_order.show_menu()
+my_order.add_item()
