@@ -51,3 +51,52 @@ if num_float - math.floor(num_float) > 0.50:
 else:
     print(math.floor(num_float))
 ```
+
+### Waiter_Helper
+
+This task and the associated readme were completed in a dedicated git repository.
+
+### movie_ratings
+
+This work is similar to a few previously done exercises, except neatened up to encapsulate the code in a class called Rating_Explainer. By default, this will now have a dictionary of the ratings as keys and their associated explanation as a value.
+
+
+```python
+class Rating_Explainer:
+
+    def __init__(self):
+        self.avail_ratings = {
+            "U" : "Everyone can watch",
+            "PG": "General viewing, but some scenes may be unsuitable for young children",
+            "12": "Films classified 12A and video works classified 12 contain material that is not generally suitable for children aged under 12. No one younger than 12 may see a 12A film in a cinema unless accompanied by an adult.",
+            "15" : "No one younger than 15 may see a 15 film in a cinema",
+            "18" : " No one younger than 18 may see an 18 film in a cinema."
+        }
+```
+
+Inside the class was also a function to explain the rating after taking input from a user to check that a recognised input was used.
+
+```python
+
+    def explain_rating(self):
+        #added option to return "exit" in case this method/object was to be used in a separate while loop
+        while True:
+            rating = input(f"Which rating are interested in? Options are {self.avail_ratings.keys()}. Type 'exit' to exit: ")
+            #check for exit
+            if "exit" in rating.lower():
+                return "exit"
+            elif rating in self.avail_ratings.keys():
+                print(self.avail_ratings.get(rating))
+            else:
+                print("Input not recognised, please try again.")
+                continue
+```
+
+With this functionw written, all that remains is to create a Rating_Explainer object and call the explain_rating method.
+
+```python
+
+explainer = Rating_Explainer()
+explainer.explain_rating()
+```
+
